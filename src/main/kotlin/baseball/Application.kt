@@ -3,7 +3,9 @@ package baseball
 import camp.nextstep.edu.missionutils.Randoms
 
 fun main() {
-    val computer = generateComputerNumber()
+    val randomNumberGenerator = RandomNumberGenerator()
+    val computer = randomNumberGenerator.generate()
+    val baseBallGame = BaseBallGame(computer)
 }
 
 fun generateComputerNumber(): List<Int> {
