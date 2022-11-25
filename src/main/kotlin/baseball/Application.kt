@@ -1,10 +1,9 @@
 package baseball
 
-import camp.nextstep.edu.missionutils.Randoms
+import baseball.controller.BaseBallGameController
 
 fun main() {
-    val randomNumberGenerator = RandomNumberGenerator()
-    val computer = randomNumberGenerator.generate()
-    val baseBallGame = BaseBallGame(computer)
+    val baseBallGameController = BaseBallGameController()
+    baseBallGameController.play()
 }
 
