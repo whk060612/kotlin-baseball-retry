@@ -10,22 +10,23 @@ class BaseBallGameController {
 
     private val outputView = OutputView()
     private val inputView = InputView()
-    var computer: List<Int>
+    lateinit var computer: List<Int>
     lateinit var player: List<Int>
     private val judgement = Judgement()
 
     init {
         outputView.printStartMent()
-        computer = RandomNumberGenerator().generate()
     }
 
     fun play() {
         do {
-            player = readPlayerNumber()
-            judgement.judge(player, computer)
-        } while (player != computer)
-        outputView.printSuccessMent()
-        val command = readCommand()
+            computer = RandomNumberGenerator().generate()
+            do {
+                player = readPlayerNumber()
+                judgement.judge(player, computer)
+            } while (player != computer)
+            outputView.printSuccessMent()
+        } while (readCommand() == RETRY)
     }
 
     private fun readCommand(): Int {
@@ -46,5 +47,9 @@ class BaseBallGameController {
                 outputView.printErrorMessage(e.message.toString())
             }
         } while (true)
+    }
+
+    companion object {
+        private const val RETRY = 1
     }
 }
