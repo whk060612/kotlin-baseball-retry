@@ -10,8 +10,8 @@ class BaseBallGameController {
 
     private val outputView = OutputView()
     private val inputView = InputView()
-    lateinit var computer: List<Int>
-    lateinit var player: List<Int>
+    private lateinit var computer: List<Int>
+    private lateinit var player: List<Int>
     private val judgement = Judgement()
 
     init {
@@ -50,6 +50,6 @@ class BaseBallGameController {
     }
 
     companion object {
-        private const val RETRY = 1
+        const val RETRY = 1
     }
 }
