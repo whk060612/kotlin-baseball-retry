@@ -5,7 +5,7 @@ class Judgement {
     private val compare = Compare()
 
     fun judge(player: List<Int>, computer: List<Int>): String {
-        val result = compare.countSamePlace(player, computer)
+        val result = compare.countBallAndStrike(player, computer)
         if ((result[0] == 0) and (result[1] == 0)) return Result.NOTHING.message
         if (result[0] == 0) return "${result[1]}${Result.STRIKE.message}"
         if (result[1] == 0) return "${result[0]}${Result.BALL.message}"
