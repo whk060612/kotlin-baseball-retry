@@ -6,7 +6,8 @@ private enum class Message(val message: String) {
     BALL("볼"),
     STRIKE("스트라이크"),
     NOTHING("낫싱"),
-    SUCCESS_MENT("3개의 숫자를 모두 맞히셨습니다! 게임 종료")
+    SUCCESS_MENT("3개의 숫자를 모두 맞히셨습니다! 게임 종료"),
+    INPUT_COMMAND_MENT("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.")
 }
 
 class OutputView {
@@ -40,5 +41,9 @@ class OutputView {
 
     fun printSuccessMent() {
         println(Message.SUCCESS_MENT.message)
+    }
+
+    fun printInputCommandMent(){
+        println(Message.INPUT_COMMAND_MENT.message)
     }
 }

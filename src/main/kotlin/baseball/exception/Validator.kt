@@ -1,12 +1,12 @@
 package baseball.exception
 
-import net.bytebuddy.implementation.bytecode.StackManipulation.Size
 import java.lang.IllegalArgumentException
 
 enum class ErrorMessage(val message: String) {
     ILLEGAL_NUMBER("1부터 9사이의 숫자를 입력해주세요."),
     DUPLICATE("중복 없이 입력해주세요."),
-    ILLEGAL_SIZE("숫자 세 개를 입력해주세요.")
+    ILLEGAL_SIZE("숫자 세 개를 입력해주세요."),
+    ILLEGAL_COMMAND("1 또는 2를 입력해주세요.")
 }
 
 class Validator {
@@ -21,6 +21,12 @@ class Validator {
         }
         if (numbers.size != SIZE) throw IllegalArgumentException(ErrorMessage.ILLEGAL_SIZE.message)
         return numbers
+    }
+
+    fun checkCommand(input: String): Int {
+        val command = input.toIntOrNull() ?: throw IllegalArgumentException(ErrorMessage.ILLEGAL_COMMAND.message)
+        if ((command != 1) and (command != 2)) throw IllegalArgumentException(ErrorMessage.ILLEGAL_COMMAND.message)
+        return command
     }
 
     companion object {

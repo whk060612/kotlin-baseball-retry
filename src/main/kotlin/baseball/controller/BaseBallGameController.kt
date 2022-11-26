@@ -8,11 +8,11 @@ import java.lang.IllegalArgumentException
 
 class BaseBallGameController {
 
-    val outputView = OutputView()
-    val inputView = InputView()
+    private val outputView = OutputView()
+    private val inputView = InputView()
     var computer: List<Int>
     lateinit var player: List<Int>
-    val judgement = Judgement()
+    private val judgement = Judgement()
 
     init {
         outputView.printStartMent()
@@ -25,6 +25,12 @@ class BaseBallGameController {
             judgement.judge(player, computer)
         } while (player != computer)
         outputView.printSuccessMent()
+        val command = readCommand()
+    }
+
+    private fun readCommand(): Int {
+        outputView.printInputCommandMent()
+        return repeatInputProcess { inputView.readCommand() } as Int
     }
 
     private fun readPlayerNumber(): List<Int> {

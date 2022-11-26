@@ -11,4 +11,9 @@ class InputView {
         val input = Console.readLine()
         return validator.checkPlayerNumber(input)
     }
+
+    fun readCommand(): Int {
+        val input = Console.readLine()
+        return validator.checkCommand(input)
+    }
 }
