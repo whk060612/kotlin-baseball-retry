@@ -1,6 +1,6 @@
 package baseball.controller
 
-import baseball.domain.BaseBallGame
+import baseball.domain.Judgement
 import baseball.domain.RandomNumberGenerator
 import baseball.view.InputView
 import baseball.view.OutputView
@@ -10,9 +10,9 @@ class BaseBallGameController {
 
     val outputView = OutputView()
     val inputView = InputView()
-    val baseBallGame = BaseBallGame()
-    lateinit var computer: List<Int>
+    var computer: List<Int>
     lateinit var player: List<Int>
+    val judgement = Judgement()
 
     init {
         outputView.printStartMent()
@@ -20,13 +20,15 @@ class BaseBallGameController {
     }
 
     fun play() {
-        readPlayerNumber()
-        println(player)
+        do {
+            player = readPlayerNumber()
+            judgement.judge(player, computer)
+        } while (player != computer)
     }
 
-    fun readPlayerNumber() {
+    private fun readPlayerNumber(): List<Int> {
         outputView.printInputNumberMent()
-        player = repeatInputProcess { inputView.readPlayerNumber() } as List<Int>
+        return repeatInputProcess { inputView.readPlayerNumber() } as List<Int>
     }
 
     private fun repeatInputProcess(operation: () -> Any): Any {

@@ -9,15 +9,31 @@ private enum class Message(val message: String) {
 }
 
 class OutputView {
-    fun printStartMent(){
+    fun printStartMent() {
         println(Message.START_MENT.message)
     }
 
-    fun printInputNumberMent(){
+    fun printInputNumberMent() {
         print(Message.INPUT_NUMBER_MENT.message)
     }
 
-    fun printErrorMessage(message:String){
+    fun printErrorMessage(message: String) {
         println(message)
+    }
+
+    fun printStrike(count: Int) {
+        println("$count ${Message.STRIKE.message}")
+    }
+
+    fun printBall(count: Int) {
+        println("$count ${Message.BALL.message}")
+    }
+
+    fun printBallAndStrike(ball: Int, strike: Int) {
+        println("$ball${Message.BALL.message} $strike${Message.STRIKE.message}")
+    }
+
+    fun printNothing() {
+        println(Message.NOTHING.message)
     }
 }
