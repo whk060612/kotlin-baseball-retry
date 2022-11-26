@@ -3,13 +3,12 @@ package baseball.domain
 class Compare {
 
     fun countSamePlace(player: List<Int>, computer: List<Int>): List<Int> {
-        val ball: Int
         var strike = 0
         val count = countSameNumber(player, computer)
         for ((index, number) in player.withIndex()) {
             if (number == computer.get(index)) strike += 1
         }
-        ball = count - strike
+        val ball = count - strike
         return listOf(ball, strike)
     }
 
