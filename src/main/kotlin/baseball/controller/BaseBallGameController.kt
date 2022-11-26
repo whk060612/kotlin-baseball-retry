@@ -24,6 +24,7 @@ class BaseBallGameController {
             player = readPlayerNumber()
             judgement.judge(player, computer)
         } while (player != computer)
+        outputView.printSuccessMent()
     }
 
     private fun readPlayerNumber(): List<Int> {

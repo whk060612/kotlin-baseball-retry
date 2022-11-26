@@ -5,7 +5,8 @@ private enum class Message(val message: String) {
     INPUT_NUMBER_MENT("숫자를 입력해주세요 : "),
     BALL("볼"),
     STRIKE("스트라이크"),
-    NOTHING("낫싱")
+    NOTHING("낫싱"),
+    SUCCESS_MENT("3개의 숫자를 모두 맞히셨습니다! 게임 종료")
 }
 
 class OutputView {
@@ -22,11 +23,11 @@ class OutputView {
     }
 
     fun printStrike(count: Int) {
-        println("$count ${Message.STRIKE.message}")
+        println("$count${Message.STRIKE.message}")
     }
 
     fun printBall(count: Int) {
-        println("$count ${Message.BALL.message}")
+        println("$count${Message.BALL.message}")
     }
 
     fun printBallAndStrike(ball: Int, strike: Int) {
@@ -35,5 +36,9 @@ class OutputView {
 
     fun printNothing() {
         println(Message.NOTHING.message)
+    }
+
+    fun printSuccessMent() {
+        println(Message.SUCCESS_MENT.message)
     }
 }
