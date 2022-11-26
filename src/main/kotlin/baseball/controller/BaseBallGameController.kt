@@ -23,7 +23,7 @@ class BaseBallGameController {
             computer = RandomNumberGenerator().generate()
             do {
                 player = readPlayerNumber()
-                judgement.judge(player, computer)
+                outputView.printResult(judgement.judge(player, computer))
             } while (player != computer)
             outputView.printSuccessMent()
         } while (readCommand() == RETRY)
