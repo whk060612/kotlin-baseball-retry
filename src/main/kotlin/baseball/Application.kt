@@ -6,4 +6,3 @@ fun main() {
     val baseBallGameController = BaseBallGameController()
     baseBallGameController.play()
 }
-
