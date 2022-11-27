@@ -15,7 +15,7 @@ class CompareTest {
     }
 
     @Test
-    fun `1스트라이크 2볼`() {
+    fun `2볼 1스트라이크`() {
         val result = compare.countBallAndStrike(listOf(3, 2, 1), computer)
         assertThat(result).isEqualTo(listOf(2, 1))
     }
