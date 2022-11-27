@@ -1,5 +1,7 @@
 package baseball.controller
 
+import baseball.data.RETRY
+import baseball.data.THREE_STRIKE
 import baseball.domain.Judgement
 import baseball.domain.RandomNumberGenerator
 import baseball.view.InputView

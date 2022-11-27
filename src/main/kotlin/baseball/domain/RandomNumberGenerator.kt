@@ -1,5 +1,8 @@
 package baseball.domain
 
+import baseball.data.MAXIMUM_NUMBER
+import baseball.data.MINIMUM_NUMBER
+import baseball.data.SIZE
 import camp.nextstep.edu.missionutils.Randoms
 
 class RandomNumberGenerator {
@@ -12,11 +15,5 @@ class RandomNumberGenerator {
             }
         }
         return computer
-    }
-
-    companion object {
-        const val MINIMUM_NUMBER = 1
-        const val MAXIMUM_NUMBER = 9
-        const val SIZE = 3
     }
 }
