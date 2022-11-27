@@ -5,7 +5,7 @@ import camp.nextstep.edu.missionutils.Console
 
 class InputView {
 
-    val validator = Validator()
+    private val validator = Validator()
 
     fun readPlayerNumber(): List<Int> {
         val input = Console.readLine()

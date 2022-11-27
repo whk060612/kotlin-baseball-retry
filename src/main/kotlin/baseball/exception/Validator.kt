@@ -5,7 +5,6 @@ import baseball.data.ErrorMessage.*
 import java.lang.IllegalArgumentException
 
 class Validator {
-
     fun checkPlayerNumber(input: String): List<Int> {
         val numbers = mutableListOf<Int>()
         for (char in input) {
