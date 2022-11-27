@@ -22,12 +22,16 @@ class BaseBallGameController {
             val computer = RandomNumberGenerator().generate()
             do {
                 val player = readPlayerNumber()
-                val judgement = Judgement()
-                val result = judgement.judge(player, computer)
+                val result = judge(player, computer)
                 outputView.printResult(result)
             } while (result != THREE_STRIKE)
             outputView.printSuccessMent()
         } while (readCommand() == RETRY)
+    }
+
+    private fun judge(player: List<Int>, computer: List<Int>): String {
+        val judgement = Judgement()
+        return judgement.judge(player, computer)
     }
 
     private fun readCommand(): Int {
@@ -48,10 +52,5 @@ class BaseBallGameController {
                 outputView.printErrorMessage(e.message.toString())
             }
         } while (true)
-    }
-
-    companion object {
-        const val RETRY = 1
-        const val THREE_STRIKE = "3스트라이크"
     }
 }
