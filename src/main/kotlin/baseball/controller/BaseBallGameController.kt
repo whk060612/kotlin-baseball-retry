@@ -10,7 +10,6 @@ class BaseBallGameController {
 
     private val outputView = OutputView()
     private val inputView = InputView()
-    private val judgement = Judgement()
 
     init {
         outputView.printStartMent()
@@ -21,6 +20,7 @@ class BaseBallGameController {
             val computer = RandomNumberGenerator().generate()
             do {
                 val player = readPlayerNumber()
+                val judgement = Judgement()
                 val result = judgement.judge(player, computer)
                 outputView.printResult(result)
             } while (result != THREE_STRIKE)
